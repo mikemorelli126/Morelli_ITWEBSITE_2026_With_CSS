@@ -1,46 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Michael's background, education, career goals, and contact information.">
     <title>About/Contact | Michael's IT Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>About Me</h1>
-        <p id="banner-description3">Learn more about my background and goals.</p>
+    <header class="site-header">
+        <div class="header-inner">
+            <p class="eyebrow">GET TO KNOW ME</p>
+            <h1>About Me</h1>
+            <p id="banner-description3" class="banner-description">Learn more about my background and goals.</p>
+        </div>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="projects.html">Projects/Work</a> |
-        <a href="about.html">About/Contact</a>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects/Work</a>
+        <a href="about.html" aria-current="page">About/Contact</a>
     </nav>
-    <main>
-        <div class="white-text">
-        <section>
-            <h2>Who I Am</h2>
-            <p> This section would include a summary of who I am personally and professionally.
-            </p>
-        </section>
-
-        <section>
-            <h2>My Education and Career Goals</h2>            <p>This section would showcase my ASIT Degree, my high school diploma, and my certification in sound engineering</p>
-
-            <h3>Career Goals</h3>
-            <p> This section would be some of my career-based aspirations. I would also subtly weave in why someone should hire me. 
-            </p>
-        </section>
-
-        <section>
-            <h2>Contact Me</h2>
-            <p> I would include my telephone number, my email, my P.O. Box, and my main website here.
-            </p>
-        </section>
+    <main class="page-content">
+        <div class="page-intro">
+            <p class="eyebrow">ABOUT &amp; CONTACT</p>
+            <h2>A little about my path</h2>
+            <p>My background, education, and professional goals.</p>
+        </div>
+        <div class="content-grid content-grid--three">
+            <section class="content-card">
+                <h2>Who I Am</h2>
+                <p>This section would include a summary of who I am personally and professionally.</p>
+            </section>
+            <section class="content-card">
+                <h2>My Education and Career Goals</h2>
+                <p>This section would showcase my ASIT Degree, my high school diploma, and my certification in sound engineering.</p>
+                <h3>Career Goals</h3>
+                <p>This section would be some of my career-based aspirations. I would also subtly weave in why someone should hire me.</p>
+            </section>
+            <section class="content-card">
+                <h2>Contact Me</h2>
+                <p>I would include my telephone number, my email, my P.O. Box, and my main website here.</p>
+            </section>
         </div>
     </main>
-    <footer>
+    <footer class="site-footer">
         <p>Copyright 2026 Michael's IT Portfolio</p>
     </footer>
 </body>
