@@ -1,49 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Michael's information technology projects and work experience.">
     <title>Projects/Work | Michael's IT Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <h1>My Projects and Work</h1>
-        <p id="banner-description2">Explore the projects and skills I am developing.</p>
+    <header class="site-header">
+        <div class="header-inner">
+            <p class="eyebrow">MY EXPERIENCE</p>
+            <h1>My Projects and Work</h1>
+            <p id="banner-description2" class="banner-description">Explore the projects and skills I am developing.</p>
+        </div>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="projects.html">Projects/Work</a> |
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects/Work</a>
         <a href="about.html">About/Contact</a>
     </nav>
-<div class="white-text">
-    <main>
-        <section>
-            <h2>My IT Projects</h2>
-            <p>This section would showcase various projects I completed
-            during my time at Campus.</p>
-
-            <h3>Personal Portfolio Website</h3>
-            <p>A website built with HTML & CSS to demonstrate
-            my web development skills.</p>
-
-            <h3>Simple No Internet Game</h3>
-            <p>A bare-bones game I built to demonstrate proficiency with JavaScript and the Document Object Model.</p>
-        </section>
-
-        <section>
-            <h2>My Work Experience</h2>
-            <p>This section would describe my work experience in IT,
-            projects I have worked on, and my professional code of ethics.</p>
-        </section>
+    <main class="page-content">
+        <div class="page-intro">
+            <p class="eyebrow">PORTFOLIO</p>
+            <h2>Projects and work experience</h2>
+            <p>A look at what I have built and the experience I am developing.</p>
+        </div>
+        <div class="content-grid">
+            <section class="content-card">
+                <h2>My IT Projects</h2>
+                <p>This section would showcase various projects I completed during my time at Campus.</p>
+                <h3>Personal Portfolio Website</h3>
+                <p>A website built with HTML &amp; CSS to demonstrate my web development skills.</p>
+                <h3>Simple No Internet Game</h3>
+                <p>A bare-bones game I built to demonstrate proficiency with JavaScript and the Document Object Model.</p>
+            </section>
+            <section class="content-card">
+                <h2>My Work Experience</h2>
+                <p>This section would describe my work experience in IT, projects I have worked on, and my professional code of ethics.</p>
+            </section>
+        </div>
     </main>
-</div>
-
-    <footer>
+    <footer class="site-footer">
         <p>Copyright 2026 Michael's IT Portfolio</p>
     </footer>
-
 </body>
 </html>
