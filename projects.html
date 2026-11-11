@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="header-inner">
             <p class="eyebrow">MY EXPERIENCE</p>
@@ -23,23 +24,23 @@
         <a href="projects.html" aria-current="page">Projects/Work</a>
         <a href="about.html">About/Contact</a>
     </nav>
-    <main class="page-content">
+    <main id="main-content" class="page-content">
         <div class="page-intro">
             <p class="eyebrow">PORTFOLIO</p>
             <h2>Projects and work experience</h2>
             <p>A look at what I have built and the experience I am developing.</p>
         </div>
         <div class="content-grid">
-            <section class="content-card">
-                <h2>My IT Projects</h2>
+            <section class="content-card" aria-labelledby="section-1">
+                <h2 id="section-1">My IT Projects</h2>
                 <p>This section would showcase various projects I completed during my time at Campus.</p>
                 <h3>Personal Portfolio Website</h3>
                 <p>A website built with HTML &amp; CSS to demonstrate my web development skills.</p>
                 <h3>Simple No Internet Game</h3>
                 <p>A bare-bones game I built to demonstrate proficiency with JavaScript and the Document Object Model.</p>
             </section>
-            <section class="content-card">
-                <h2>My Work Experience</h2>
+            <section class="content-card" aria-labelledby="section-2">
+                <h2 id="section-2">My Work Experience</h2>
                 <p>This section would describe my work experience in IT, projects I have worked on, and my professional code of ethics.</p>
             </section>
         </div>
