@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="header-inner">
             <p class="eyebrow">GET TO KNOW ME</p>
@@ -23,25 +24,25 @@
         <a href="projects.html">Projects/Work</a>
         <a href="about.html" aria-current="page">About/Contact</a>
     </nav>
-    <main class="page-content">
+    <main id="main-content" class="page-content">
         <div class="page-intro">
             <p class="eyebrow">ABOUT &amp; CONTACT</p>
             <h2>A little about my path</h2>
             <p>My background, education, and professional goals.</p>
         </div>
         <div class="content-grid content-grid--three">
-            <section class="content-card">
-                <h2>Who I Am</h2>
+            <section class="content-card" aria-labelledby="section-1">
+                <h2 id="section-1">Who I Am</h2>
                 <p>This section would include a summary of who I am personally and professionally.</p>
             </section>
-            <section class="content-card">
-                <h2>My Education and Career Goals</h2>
+            <section class="content-card" aria-labelledby="section-2">
+                <h2 id="section-2">My Education and Career Goals</h2>
                 <p>This section would showcase my ASIT Degree, my high school diploma, and my certification in sound engineering.</p>
                 <h3>Career Goals</h3>
                 <p>This section would be some of my career-based aspirations. I would also subtly weave in why someone should hire me.</p>
             </section>
-            <section class="content-card">
-                <h2>Contact Me</h2>
+            <section class="content-card" aria-labelledby="section-3">
+                <h2 id="section-3">Contact Me</h2>
                 <p>I would include my telephone number, my email, my P.O. Box, and my main website here.</p>
             </section>
         </div>
