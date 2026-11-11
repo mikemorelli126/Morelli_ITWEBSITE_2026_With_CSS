@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="header-inner">
             <p class="eyebrow">IT PORTFOLIO</p>
@@ -23,19 +24,19 @@
         <a href="projects.html">Projects/Work</a>
         <a href="about.html">About/Contact</a>
     </nav>
-    <main class="page-content">
+    <main id="main-content" class="page-content">
         <div class="page-intro">
             <p class="eyebrow">WELCOME</p>
             <h2>Building skills. Solving problems.</h2>
             <p>This website showcases my IT skills and projects.</p>
         </div>
         <div class="content-grid">
-            <section class="content-card">
-                <h2>Welcome</h2>
+            <section class="content-card" aria-labelledby="section-1">
+                <h2 id="section-1">Welcome</h2>
                 <p>This website showcases my IT skills and projects.</p>
             </section>
-            <section class="content-card">
-                <h2>My Skills</h2>
+            <section class="content-card" aria-labelledby="section-2">
+                <h2 id="section-2">My Skills</h2>
                 <h3>Web Development</h3>
                 <p>I will learn HTML, CSS, &amp; JavaScript.</p>
                 <h3>Information Technology</h3>
