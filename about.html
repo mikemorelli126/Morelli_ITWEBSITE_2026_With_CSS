@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -20,9 +21,14 @@
         </div>
     </header>
     <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects/Work</a>
-        <a href="about.html" aria-current="page">About/Contact</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+            <span aria-hidden="true">&#9776;</span> <span>Menu</span>
+        </button>
+        <div class="nav-links" id="primary-navigation">
+            <a href="index.html" >Home</a>
+            <a href="projects.html" >Projects/Work</a>
+            <a href="about.html" aria-current="page">About/Contact</a>
+        </div>
     </nav>
     <main id="main-content" class="page-content">
         <div class="page-intro">
@@ -43,7 +49,34 @@
             </section>
             <section class="content-card" aria-labelledby="section-3">
                 <h2 id="section-3">Contact Me</h2>
-                <p>I would include my telephone number, my email, my P.O. Box, and my main website here.</p>
+                <p>Email: <a href="mailto:mikemorelli126@gmail.com">mikemorelli126@gmail.com</a></p>
+                <p>Phone: <a href="tel:+15392927622">539-292-7622</a></p>
+                <p>Complete the form below to validate a message.</p>
+                <form id="contact-form" novalidate>
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                        <p class="field-error" id="name-error"></p>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                        <p class="field-error" id="email-error"></p>
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+                        <p class="field-error" id="message-error"></p>
+                    </div>
+                    <button class="form-submit" type="submit">Validate Message</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+                <p class="form-note">This demonstration form validates your message but does not send or store it. Contact me directly by email or phone.</p>
+            </section>
+            <section class="content-card" id="github-profile" aria-labelledby="github-heading">
+                <h2 id="github-heading">My GitHub Profile</h2>
+                <p id="github-status" role="status" aria-live="polite">Loading live GitHub profile...</p>
+                <div id="github-details"></div>
             </section>
         </div>
     </main>
