@@ -36,7 +36,7 @@
             <h2>A little about my path</h2>
             <p>My background, education, and professional goals.</p>
         </div>
-        <div class="content-grid content-grid--three">
+        <div class="content-grid">
             <section class="content-card" aria-labelledby="section-1">
                 <h2 id="section-1">Who I Am</h2>
                 <p>This section would include a summary of who I am personally and professionally.</p>
@@ -56,17 +56,17 @@
                     <div class="form-field">
                         <label for="name">Name</label>
                         <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                        <p class="field-error" id="name-error"></p>
+                        <p class="field-error" id="name-error" aria-live="polite"></p>
                     </div>
                     <div class="form-field">
                         <label for="email">Email</label>
                         <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                        <p class="field-error" id="email-error"></p>
+                        <p class="field-error" id="email-error" aria-live="polite"></p>
                     </div>
                     <div class="form-field">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
-                        <p class="field-error" id="message-error"></p>
+                        <p class="field-error" id="message-error" aria-live="polite"></p>
                     </div>
                     <button class="form-submit" type="submit">Validate Message</button>
                     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
