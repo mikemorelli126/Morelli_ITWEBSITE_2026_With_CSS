@@ -368,3 +368,125 @@ a {
     .nav-links.is-open { display: flex; }
     .nav-links a { width: 100%; text-align: center; }
 }
+
+
+/* JavaScript interaction lab */
+.interaction-lab {
+    margin-top: var(--space-4);
+}
+.interaction-example {
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+}
+.interaction-button,
+.remove-item-button {
+    min-height: 42px;
+    padding: 9px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--color-accent);
+    color: #fff;
+    font: 600 0.95rem "Poppins", sans-serif;
+    cursor: pointer;
+}
+.interaction-button:hover,
+.remove-item-button:hover {
+    background: #b81031;
+}
+.interaction-input {
+    width: 100%;
+    min-height: 44px;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border: 1px solid #777;
+    border-radius: 6px;
+    background: #101010;
+    color: #fff;
+    font: inherit;
+}
+.interaction-input:focus {
+    outline: 3px solid #ff7188;
+    outline-offset: 2px;
+}
+.live-preview {
+    margin-top: 8px;
+    padding: 16px;
+    border: 2px dashed #777;
+    border-radius: 8px;
+    background: #171717;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+.live-preview p {
+    margin: 0;
+    color: var(--color-muted);
+}
+.live-preview.has-content {
+    border: 2px solid #ff526f;
+    background: #351522;
+}
+.live-preview.has-content p {
+    color: #fff;
+}
+.list-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+.list-form .interaction-input {
+    flex: 1 1 220px;
+    width: auto;
+}
+.dynamic-list {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.dynamic-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-surface-raised);
+    overflow-wrap: anywhere;
+}
+.dynamic-list-item span {
+    min-width: 0;
+}
+.remove-item-button {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+.list-empty {
+    padding: 10px 12px;
+    color: var(--color-muted);
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+@media (max-width: 520px) {
+    .list-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .list-form .interaction-input,
+    .list-form .interaction-button {
+        width: 100%;
+    }
+}
