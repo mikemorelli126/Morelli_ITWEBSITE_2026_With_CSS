@@ -26,8 +26,8 @@
         </button>
         <div class="nav-links" id="primary-navigation">
             <a href="index.html" aria-current="page">Home</a>
-            <a href="projects.html" >Projects/Work</a>
-            <a href="about.html" >About/Contact</a>
+            <a href="projects.html">Projects/Work</a>
+            <a href="about.html">About/Contact</a>
         </div>
     </nav>
     <main id="main-content" class="page-content">
@@ -49,6 +49,40 @@
                 <p>I will develop customer support &amp; computer troubleshooting skills.</p>
             </section>
         </div>
+
+        <section class="content-card interaction-lab" aria-labelledby="interaction-heading">
+            <p class="eyebrow">JAVASCRIPT DEMO</p>
+            <h2 id="interaction-heading">Interactive Web Page</h2>
+            <p>These examples demonstrate JavaScript event listeners, live input styling, and dynamic DOM updates.</p>
+
+            <div class="interaction-example">
+                <h3>1. Button changes page content</h3>
+                <p id="message-output" aria-live="polite">Click the button to display a new message.</p>
+                <button class="interaction-button" id="message-button" type="button">Change Message</button>
+            </div>
+
+            <div class="interaction-example">
+                <h3>2. Live style changes while typing</h3>
+                <label for="live-input">Type something below:</label>
+                <input class="interaction-input" id="live-input" type="text" placeholder="Your text changes the preview..." maxlength="80">
+                <div class="live-preview" id="live-preview" aria-live="polite">
+                    <p id="preview-text">Your live preview will appear here.</p>
+                </div>
+            </div>
+
+            <div class="interaction-example">
+                <h3>3. Dynamic list</h3>
+                <p>Add items to your list. You can remove an item with its Remove button.</p>
+                <form class="list-form" id="item-form">
+                    <label class="visually-hidden" for="item-input">New list item</label>
+                    <input class="interaction-input" id="item-input" type="text" placeholder="Enter a list item" maxlength="80" required>
+                    <button class="interaction-button" type="submit">Add Item</button>
+                </form>
+                <ul class="dynamic-list" id="dynamic-list" aria-live="polite">
+                    <li class="list-empty" id="list-empty">Your list is empty. Add your first item!</li>
+                </ul>
+            </div>
+        </section>
     </main>
     <footer class="site-footer">
         <p>Copyright 2026 Michael's IT Portfolio</p>
