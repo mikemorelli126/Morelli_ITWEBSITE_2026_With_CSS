@@ -1,6 +1,6 @@
-/* Milestone 3 JavaScript interactions */
+/* JavaScript interactions for Michael's IT Portfolio */
 document.addEventListener("DOMContentLoaded", () => {
-    // DOM interaction: responsive mobile navigation uses querySelector and addEventListener.
+    // Responsive mobile navigation.
     const menuButton = document.querySelector(".nav-toggle");
     const navigation = document.querySelector("#primary-navigation");
 
@@ -27,9 +27,84 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Accessible required-field validation. Errors clear when the user corrects a field.
-    const form = document.querySelector("#contact-form");
-    if (form) {
+    // Requirement 1: a click event visibly changes page content.
+    const messageButton = document.querySelector("#message-button");
+    const messageOutput = document.querySelector("#message-output");
+    if (messageButton && messageOutput) {
+        const messages = [
+            "JavaScript makes web pages interactive!",
+            "You clicked the button. The page content changed.",
+            "Event listeners respond to actions from visitors."
+        ];
+        let messageIndex = 0;
+
+        messageButton.addEventListener("click", () => {
+            messageOutput.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        });
+    }
+
+    // Requirement 2: update preview styles and content on every input event.
+    const liveInput = document.querySelector("#live-input");
+    const livePreview = document.querySelector("#live-preview");
+    const previewText = document.querySelector("#preview-text");
+    if (liveInput && livePreview && previewText) {
+        liveInput.addEventListener("input", () => {
+            const enteredText = liveInput.value.trim();
+            previewText.textContent = enteredText || "Your live preview will appear here.";
+            livePreview.classList.toggle("has-content", enteredText.length > 0);
+        });
+    }
+
+    // Requirement 3: create list items with createElement() and appendChild().
+    const itemForm = document.querySelector("#item-form");
+    const itemInput = document.querySelector("#item-input");
+    const dynamicList = document.querySelector("#dynamic-list");
+
+    if (itemForm && itemInput && dynamicList) {
+        itemForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const itemText = itemInput.value.trim();
+            if (!itemText) {
+                itemInput.focus();
+                return;
+            }
+
+            const emptyMessage = dynamicList.querySelector(".list-empty");
+            if (emptyMessage) emptyMessage.remove();
+
+            const listItem = document.createElement("li");
+            listItem.className = "dynamic-list-item";
+
+            const itemLabel = document.createElement("span");
+            itemLabel.textContent = itemText;
+
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.className = "remove-item-button";
+            removeButton.textContent = "Remove";
+            removeButton.setAttribute("aria-label", "Remove " + itemText);
+            removeButton.addEventListener("click", () => {
+                listItem.remove();
+                if (dynamicList.children.length === 0) {
+                    const emptyItem = document.createElement("li");
+                    emptyItem.className = "list-empty";
+                    emptyItem.textContent = "Your list is empty. Add your first item!";
+                    dynamicList.appendChild(emptyItem);
+                }
+            });
+
+            listItem.appendChild(itemLabel);
+            listItem.appendChild(removeButton);
+            dynamicList.appendChild(listItem);
+            itemInput.value = "";
+            itemInput.focus();
+        });
+    }
+
+    // Accessible required-field validation on the contact page.
+    const contactForm = document.querySelector("#contact-form");
+    if (contactForm) {
         const fieldNames = ["name", "email", "message"];
         const validate = (field) => {
             let errorText = "";
@@ -39,13 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
                 errorText = "Enter a valid email address.";
             }
-            document.querySelector("#" + field.id + "-error").textContent = errorText;
+            const errorElement = document.querySelector("#" + field.id + "-error");
+            if (errorElement) errorElement.textContent = errorText;
             field.setAttribute("aria-invalid", errorText ? "true" : "false");
             return errorText === "";
         };
 
         fieldNames.forEach((fieldName) => {
-            const field = form.elements.namedItem(fieldName);
+            const field = contactForm.elements.namedItem(fieldName);
+            if (!field) return;
             field.addEventListener("blur", () => validate(field));
             field.addEventListener("input", () => {
                 if (field.getAttribute("aria-invalid") === "true" || field.value.trim() !== "") {
@@ -54,20 +131,27 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        form.addEventListener("submit", (event) => {
+        contactForm.addEventListener("submit", (event) => {
             event.preventDefault();
-            const valid = fieldNames.map((fieldName) => validate(form.elements.namedItem(fieldName))).every(Boolean);
+            const valid = fieldNames
+                .map((fieldName) => {
+                    const field = contactForm.elements.namedItem(fieldName);
+                    return field ? validate(field) : false;
+                })
+                .every(Boolean);
             const status = document.querySelector("#form-status");
             if (!valid) {
-                status.textContent = "Please correct the highlighted fields before submitting.";
-                form.querySelector('[aria-invalid="true"]').focus();
+                if (status) status.textContent = "Please correct the highlighted fields before submitting.";
+                contactForm.querySelector('[aria-invalid="true"]')?.focus();
                 return;
             }
-            status.textContent = "All fields are valid. This demonstration form does not send messages yet; please use the email or phone number above.";
+            if (status) {
+                status.textContent = "All fields are valid. This demonstration form does not send messages yet; please use the email or phone number above.";
+            }
         });
     }
 
-    // Bonus API: load public GitHub profile data and handle network/API failures.
+    // Load public GitHub profile data on the contact page when its card exists.
     const profileCard = document.querySelector("#github-profile");
     if (profileCard) {
         const status = document.querySelector("#github-status");
